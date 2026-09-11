@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.activations import linear, relu, sigmoid
+import subprocess
 
 dlc = dict(dlblue = '#0096ff', dlorange = '#FF9300', dldarkred='#C00000', dlmagenta='#FF40FF', dlpurple='#7030A0', dldarkblue =  '#0D5BDC', dlmedblue='#4285F4')
 dlblue = '#0096ff'; dlorange = '#FF9300'; dldarkred='#C00000'; dlmagenta='#FF40FF'; dlpurple='#7030A0'; dldarkblue =  '#0D5BDC'; dlmedblue='#4285F4'
@@ -12,8 +13,9 @@ plt.style.use('./deeplearning.mplstyle')
 
 
 def load_data():
-    X = np.load("data/X.npy")
-    y = np.load("data/y.npy")
+    subprocess.run(['gunzip', '-kf', '../../Week1/Labs/data/*.gz'])
+    X = np.load("../../Week1/Labs/data/X.npy")
+    y = np.load("../../Week1/Labs/data/y.npy")
     return X, y
 
 def plt_act_trio():

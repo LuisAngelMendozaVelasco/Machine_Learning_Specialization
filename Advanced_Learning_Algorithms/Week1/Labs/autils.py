@@ -1,6 +1,8 @@
 import numpy as np
+import subprocess
 
 def load_data():
+    subprocess.run(['gunzip', '-kf', 'data/*.gz'])
     X = np.load("data/X.npy")
     y = np.load("data/y.npy")
     X = X[0:1000]

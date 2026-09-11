@@ -14,9 +14,9 @@ import tabulate
 
 
 def load_data():
-    item_train = genfromtxt('./data/content_item_train.csv', delimiter=',')
-    user_train = genfromtxt('./data/content_user_train.csv', delimiter=',')
-    y_train    = genfromtxt('./data/content_y_train.csv', delimiter=',')
+    item_train = genfromtxt('./data/content_item_train.csv.gz', delimiter=',')
+    user_train = genfromtxt('./data/content_user_train.csv.gz', delimiter=',')
+    y_train    = genfromtxt('./data/content_y_train.csv.gz', delimiter=',')
     with open('./data/content_item_train_header.txt', newline='') as f:    #csv reader handles quoted strings better
         item_features = list(csv.reader(f))[0]
     with open('./data/content_user_train_header.txt', newline='') as f:
